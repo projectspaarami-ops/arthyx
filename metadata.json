@@ -1,0 +1,6 @@
+{
+  "name": "Arthyx Education",
+  "description": "Premium, modern financial market education platform offering the 13-week structured SAGA learning journey and introductory ₹99 Eye-Opener.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
