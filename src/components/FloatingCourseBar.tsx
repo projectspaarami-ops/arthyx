@@ -25,7 +25,9 @@ export function FloatingCourseBar({
       '#curriculum-outline',
       '.eye-opener-cta-section',
       '#final-eyeopener-cta',
-      '[data-hide-floating-dock]'
+      '#reservation-modal',
+      '[data-hide-floating-dock]',
+      '.course-cta-anchor'
     ];
 
     const elementsToWatch: Element[] = [];
@@ -39,18 +41,24 @@ export function FloatingCourseBar({
       return;
     }
 
+    const intersectingElements = new Set<Element>();
+
     // Use IntersectionObserver to detect when any trigger element is in view
     const observer = new IntersectionObserver(
       (entries) => {
-        // If ANY monitored element with course / reserve CTA is currently intersecting, hide dock
-        const anyVisible = entries.some((entry) => entry.isIntersecting);
-        setIsVisible(!anyVisible);
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            intersectingElements.add(entry.target);
+          } else {
+            intersectingElements.delete(entry.target);
+          }
+        });
+        setIsVisible(intersectingElements.size === 0);
       },
       {
         root: null,
-        // Trigger with slight threshold so it hides right as the section enters the screen
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.05,
+        rootMargin: '0px 0px -30px 0px'
       }
     );
 
@@ -73,17 +81,17 @@ export function FloatingCourseBar({
       <div
         className={`px-3.5 py-2.5 sm:px-5 sm:py-3 rounded-full border shadow-2xl backdrop-blur-xl flex items-center gap-3 sm:gap-4 max-w-[94vw] transition-colors ${
           isLight
-            ? 'bg-white/95 border-slate-200/90 shadow-slate-900/15 text-slate-900'
-            : 'bg-[#0a101f]/95 border-[#c99a4e]/40 shadow-black/80 text-white'
+            ? 'bg-white/95 border-[#DDE2EC] shadow-slate-900/10 text-[#172033]'
+            : 'bg-[#172B68]/95 border-[#243E8A]/40 shadow-black/80 text-white'
         }`}
       >
         {/* Left: Course Identity Badge */}
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#c99a4e] to-[#f3d99d] p-0.5 flex items-center justify-center shrink-0 shadow-sm">
+          <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-[#243E8A] to-[#FBBE21] p-0.5 flex items-center justify-center shrink-0 shadow-sm">
             <div className={`w-full h-full rounded-full flex items-center justify-center ${
-              isLight ? 'bg-white text-slate-950' : 'bg-[#0a101f] text-[#f3d99d]'
+              isLight ? 'bg-white text-[#172033]' : 'bg-[#172B68] text-[#FBBE21]'
             }`}>
-              <Layers className="w-4 h-4 text-[#c99a4e]" />
+              <Layers className="w-4 h-4 text-[#243E8A] dark:text-[#FBBE21]" />
             </div>
           </div>
 
@@ -94,13 +102,13 @@ export function FloatingCourseBar({
               </span>
               <span className={`text-[10px] font-semibold px-2 py-0.2 rounded-full border ${
                 isLight 
-                  ? 'bg-[#fdf6e9] text-[#966b24] border-[#e9d5a1]' 
-                  : 'bg-[#c99a4e]/20 text-[#f3d99d] border-[#c99a4e]/30'
+                  ? 'bg-[#243E8A]/10 text-[#243E8A] border-[#243E8A]/20' 
+                  : 'bg-[#FBBE21]/20 text-[#FBBE21] border-[#FBBE21]/30'
               }`}>
                 Live Mentorship
               </span>
             </div>
-            <p className={`text-[11px] leading-tight ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+            <p className={`text-[11px] leading-tight ${isLight ? 'text-[#5B6475]' : 'text-slate-300'}`}>
               4 Sequential Stages • Trade Journal Audits • Strictly Non-Advisory
             </p>
           </div>
@@ -110,14 +118,14 @@ export function FloatingCourseBar({
             <div className="text-xs font-bold font-display leading-tight">
               SAGA™ 13-Week
             </div>
-            <div className={`text-[10px] leading-tight ${isLight ? 'text-slate-600' : 'text-slate-400'}`}>
+            <div className={`text-[10px] leading-tight ${isLight ? 'text-[#5B6475]' : 'text-slate-300'}`}>
               4 Progressive Stages
             </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className={`h-6 w-[1px] ${isLight ? 'bg-slate-200' : 'bg-white/15'}`} />
+        <div className={`h-6 w-[1px] ${isLight ? 'bg-[#DDE2EC]' : 'bg-white/15'}`} />
 
         {/* Action Buttons */}
         <div className="flex items-center gap-2 shrink-0">
@@ -127,11 +135,11 @@ export function FloatingCourseBar({
               onClick={onNavigateToCourse}
               className={`hidden md:flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-semibold transition-all border ${
                 isLight
-                  ? 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200'
+                  ? 'bg-[#F8F9FC] hover:bg-slate-100 text-[#172033] border-[#DDE2EC]'
                   : 'bg-white/5 hover:bg-white/10 text-slate-200 border-white/10'
               }`}
             >
-              <BookOpen className="w-3.5 h-3.5 text-[#c99a4e]" />
+              <BookOpen className="w-3.5 h-3.5 text-[#243E8A] dark:text-[#FBBE21]" />
               <span>Syllabus</span>
             </button>
           )}
@@ -139,9 +147,9 @@ export function FloatingCourseBar({
           <button
             id="dock-course-reserve-btn"
             onClick={onOpenReservation}
-            className="px-4 py-2 rounded-full text-xs font-bold text-slate-950 bg-gradient-to-r from-[#e5b869] via-[#c99a4e] to-[#ba8a3e] hover:brightness-105 active:scale-[0.98] shadow-md shadow-[#c99a4e]/25 flex items-center gap-1.5 transition-all"
+            className="px-4 py-2 rounded-full text-xs font-bold text-[#172B68] bg-[#FBBE21] hover:bg-[#f3b516] active:scale-[0.98] shadow-md shadow-[#FBBE21]/25 flex items-center gap-1.5 transition-all"
           >
-            <Sparkles className="w-3.5 h-3.5 text-slate-950" />
+            <Sparkles className="w-3.5 h-3.5 text-[#172B68]" />
             <span>Reserve ₹99 Seat</span>
           </button>
         </div>

@@ -42,11 +42,11 @@ export function Navbar({ currentPage, onNavigate, onOpenReservation }: NavbarPro
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? isLight
-            ? 'bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm py-3.5'
-            : 'bg-[#080c15]/95 backdrop-blur-md border-b border-white/10 shadow-2xl shadow-black/40 py-3.5' 
+            ? 'bg-white/95 backdrop-blur-md border-b border-[#DDE2EC] shadow-sm py-3.5'
+            : 'bg-[#09101d]/95 backdrop-blur-md border-b border-white/10 shadow-2xl shadow-black/40 py-3.5' 
           : isLight
-            ? 'bg-white/80 backdrop-blur-sm border-b border-slate-200/60 py-4 sm:py-5'
-            : 'bg-[#080c15]/70 backdrop-blur-sm border-b border-white/5 py-4 sm:py-5'
+            ? 'bg-[#F8F9FC]/90 backdrop-blur-sm border-b border-[#DDE2EC]/70 py-4 sm:py-5'
+            : 'bg-[#09101d]/80 backdrop-blur-sm border-b border-white/5 py-4 sm:py-5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,15 +55,15 @@ export function Navbar({ currentPage, onNavigate, onOpenReservation }: NavbarPro
           <button 
             id="brand-logo-btn"
             onClick={() => handleLinkClick('home', 'top')}
-            className="flex items-center gap-3 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#c99a4e]"
+            className="flex items-center gap-3 text-left group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#243E8A]"
           >
             {/* Geometric Analytical Emblem with Glow */}
             <div className={`w-10 h-10 rounded-xl p-2 flex items-center justify-center transition-all shrink-0 ${
               isLight 
-                ? 'bg-[#0f172a] border border-[#c99a4e]/70 shadow-md shadow-[#c99a4e]/15 group-hover:scale-105' 
-                : 'bg-gradient-to-br from-[#18233c] via-[#0d1629] to-[#070b14] border border-[#c99a4e]/60 shadow-lg shadow-[#c99a4e]/20 group-hover:scale-105 group-hover:border-[#c99a4e]'
+                ? 'bg-[#243E8A] border border-[#FBBE21]/60 shadow-md shadow-[#243E8A]/20 group-hover:scale-105' 
+                : 'bg-gradient-to-br from-[#243E8A] via-[#172B68] to-[#0d1629] border border-[#FBBE21]/60 shadow-lg shadow-[#243E8A]/25 group-hover:scale-105 group-hover:border-[#FBBE21]'
             }`}>
-              <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-[#c99a4e]">
+              <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-[#FBBE21]">
                 <path d="M4 19L12 5L20 19" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M8 13.5H16" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" />
                 <path d="M12 5V19" stroke="currentColor" strokeWidth="1.2" strokeDasharray="2 2" className="opacity-75" />
@@ -72,18 +72,18 @@ export function Navbar({ currentPage, onNavigate, onOpenReservation }: NavbarPro
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className={`text-xl font-extrabold tracking-tight font-display ${isLight ? 'text-slate-950' : 'text-white'}`}>
+                <span className={`text-xl font-extrabold tracking-tight font-display ${isLight ? 'text-[#172033]' : 'text-white'}`}>
                   Arthyx
                 </span>
                 <span className={`text-[10px] tracking-wide px-2 py-0.5 rounded-full font-bold border ${
                   isLight 
-                    ? 'bg-[#fdf6e9] text-[#966b24] border-[#e9d5a1]' 
-                    : 'bg-[#c99a4e]/20 text-[#f3d99d] border-[#c99a4e]/40'
+                    ? 'bg-[#243E8A]/10 text-[#243E8A] border-[#243E8A]/20' 
+                    : 'bg-[#FBBE21]/20 text-[#FBBE21] border-[#FBBE21]/40'
                 }`}>
                   Education
                 </span>
               </div>
-              <p className={`text-[11px] font-semibold tracking-wide block ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+              <p className={`text-[11px] font-semibold tracking-wide block ${isLight ? 'text-[#5B6475]' : 'text-slate-300'}`}>
                 Method over Guesswork
               </p>
             </div>
@@ -92,8 +92,8 @@ export function Navbar({ currentPage, onNavigate, onOpenReservation }: NavbarPro
           {/* Desktop Navigation Links */}
           <nav className={`hidden xl:flex items-center gap-1 p-1.5 rounded-full border ${
             isLight 
-              ? 'bg-slate-100/90 border-slate-200/90' 
-              : 'bg-[#0f172a]/60 border-white/10'
+              ? 'bg-[#F8F9FC] border-[#DDE2EC]' 
+              : 'bg-[#172B68]/40 border-white/10'
           }`}>
             {navLinks.map((item) => {
               const isActive = currentPage === item.page;
@@ -104,9 +104,9 @@ export function Navbar({ currentPage, onNavigate, onOpenReservation }: NavbarPro
                   onClick={() => handleLinkClick(item.page, 'top')}
                   className={`px-3.5 py-1.5 rounded-full text-xs transition-all flex items-center gap-1.5 ${
                     isActive
-                      ? 'bg-[#c99a4e] text-slate-950 shadow-sm font-bold'
+                      ? 'bg-[#243E8A] text-white shadow-sm font-bold'
                       : isLight
-                        ? 'text-slate-600 hover:text-slate-900 hover:bg-white font-medium'
+                        ? 'text-[#5B6475] hover:text-[#172033] hover:bg-white font-medium'
                         : 'text-slate-300 hover:text-white hover:bg-white/5 font-medium'
                   }`}
                 >
@@ -114,10 +114,10 @@ export function Navbar({ currentPage, onNavigate, onOpenReservation }: NavbarPro
                   {item.badge && (
                     <span className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
                       isActive 
-                        ? 'bg-slate-950/15 text-slate-950' 
+                        ? 'bg-white/25 text-white' 
                         : isLight 
-                          ? 'bg-slate-200 text-slate-700' 
-                          : 'bg-white/20 text-white'
+                          ? 'bg-[#FBBE21] text-[#172B68]' 
+                          : 'bg-[#FBBE21]/20 text-[#FBBE21]'
                     }`}>
                       {item.badge}
                     </span>
@@ -133,27 +133,27 @@ export function Navbar({ currentPage, onNavigate, onOpenReservation }: NavbarPro
             <button
               id="nav-theme-toggle-btn"
               onClick={toggleTheme}
-              title={isLight ? "Switch to Dark Theme" : "Switch to Light Theme (Figma)"}
+              title={isLight ? "Switch to Dark Theme" : "Switch to Light Theme"}
               className={`p-2 rounded-lg border transition-all flex items-center justify-center ${
                 isLight
-                  ? 'bg-slate-100 border-slate-200 text-slate-700 hover:bg-slate-200 hover:text-slate-900 shadow-sm'
+                  ? 'bg-white border-[#DDE2EC] text-[#5B6475] hover:bg-slate-100 hover:text-[#172033] shadow-sm'
                   : 'bg-white/5 border-white/10 text-slate-300 hover:bg-white/10 hover:text-white'
               }`}
               aria-label="Toggle Theme"
             >
               {isLight ? (
-                <Moon className="w-4 h-4 text-slate-700" />
+                <Moon className="w-4 h-4 text-[#172033]" />
               ) : (
-                <Sun className="w-4 h-4 text-[#e5b869]" />
+                <Sun className="w-4 h-4 text-[#FBBE21]" />
               )}
             </button>
 
             <button
               id="nav-eye-opener-cta"
               onClick={onOpenReservation}
-              className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold text-slate-950 bg-gradient-to-r from-[#e5b869] via-[#c99a4e] to-[#ba8a3e] hover:from-[#f3c87e] hover:to-[#c99a4e] transition-all shadow-md shadow-[#c99a4e]/20 hover:shadow-[#c99a4e]/30 active:scale-[0.98]"
+              className="group relative inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs font-bold text-[#172B68] bg-[#FBBE21] hover:bg-[#f3b516] transition-all shadow-md shadow-[#FBBE21]/20 hover:shadow-[#FBBE21]/30 active:scale-[0.98]"
             >
-              <Sparkles className="w-3.5 h-3.5 text-slate-950" />
+              <Sparkles className="w-3.5 h-3.5 text-[#172B68]" />
               <span>Reserve ₹99 Seat</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
             </button>
@@ -165,17 +165,17 @@ export function Navbar({ currentPage, onNavigate, onOpenReservation }: NavbarPro
               id="mobile-theme-toggle"
               onClick={toggleTheme}
               className={`p-1.5 rounded-md border ${
-                isLight ? 'bg-slate-100 border-slate-200 text-slate-700' : 'bg-white/5 border-white/10 text-slate-300'
+                isLight ? 'bg-white border-[#DDE2EC] text-[#172033]' : 'bg-white/5 border-white/10 text-slate-300'
               }`}
               aria-label="Toggle Theme"
             >
-              {isLight ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4 text-[#e5b869]" />}
+              {isLight ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4 text-[#FBBE21]" />}
             </button>
 
             <button
               id="mobile-eye-opener-quick-btn"
               onClick={onOpenReservation}
-              className="px-3 py-1.5 rounded-md text-[11px] font-bold text-slate-950 bg-[#c99a4e]"
+              className="px-3 py-1.5 rounded-md text-[11px] font-bold text-[#172B68] bg-[#FBBE21]"
             >
               ₹99 Seat
             </button>
@@ -185,7 +185,7 @@ export function Navbar({ currentPage, onNavigate, onOpenReservation }: NavbarPro
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className={`p-2 rounded-lg focus:outline-none ${
                 isLight 
-                  ? 'text-slate-700 hover:text-slate-900 hover:bg-slate-100' 
+                  ? 'text-[#172033] hover:bg-slate-100' 
                   : 'text-slate-300 hover:text-white hover:bg-white/10'
               }`}
               aria-label="Toggle Navigation"
@@ -199,7 +199,7 @@ export function Navbar({ currentPage, onNavigate, onOpenReservation }: NavbarPro
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
         <div className={`xl:hidden fixed inset-x-0 top-full px-6 py-6 shadow-2xl backdrop-blur-xl animate-in slide-in-from-top-4 duration-200 border-b max-h-[80vh] overflow-y-auto ${
-          isLight ? 'bg-white/98 border-slate-200 text-slate-800' : 'bg-[#080c15]/98 border-white/10 text-slate-200'
+          isLight ? 'bg-white/98 border-[#DDE2EC] text-[#172033]' : 'bg-[#09101d]/98 border-white/10 text-slate-200'
         }`}>
           <div className="flex flex-col gap-2">
             <div className="grid grid-cols-2 gap-2 mb-3">
@@ -210,9 +210,9 @@ export function Navbar({ currentPage, onNavigate, onOpenReservation }: NavbarPro
                   onClick={() => handleLinkClick(item.page, 'top')}
                   className={`py-2.5 px-3 rounded-lg text-center text-xs font-semibold border transition-all ${
                     currentPage === item.page
-                      ? 'bg-[#c99a4e] text-slate-950 border-[#c99a4e]'
+                      ? 'bg-[#243E8A] text-white border-[#243E8A]'
                       : isLight
-                        ? 'bg-slate-100 text-slate-800 border-slate-200'
+                        ? 'bg-[#F8F9FC] text-[#172033] border-[#DDE2EC]'
                         : 'bg-white/5 text-slate-200 border-white/10'
                   }`}
                 >
@@ -221,13 +221,13 @@ export function Navbar({ currentPage, onNavigate, onOpenReservation }: NavbarPro
               ))}
             </div>
 
-            <div className={`pt-3 border-t ${isLight ? 'border-slate-200' : 'border-white/10'}`}>
+            <div className={`pt-3 border-t ${isLight ? 'border-[#DDE2EC]' : 'border-white/10'}`}>
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenReservation();
                 }}
-                className="w-full py-3 rounded-xl font-bold text-xs text-slate-950 bg-gradient-to-r from-[#e5b869] to-[#c99a4e] flex items-center justify-center gap-2 shadow-lg"
+                className="w-full py-3 rounded-xl font-bold text-xs text-[#172B68] bg-[#FBBE21] hover:bg-[#f3b516] flex items-center justify-center gap-2 shadow-lg"
               >
                 <Sparkles className="w-4 h-4" />
                 <span>Reserve ₹99 Eye-Opener Seat</span>

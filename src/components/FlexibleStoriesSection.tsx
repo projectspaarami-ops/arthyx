@@ -91,12 +91,12 @@ export function FlexibleStoriesSection() {
       {/* Top Google Review Trust Strip */}
       <div className={`mb-10 p-5 rounded-2xl border flex flex-col sm:flex-row items-center justify-between gap-4 transition-all ${
         isLight 
-          ? 'bg-[#fdfbf7] border-[#c99a4e]/30 shadow-md shadow-slate-200/50' 
-          : 'bg-gradient-to-r from-[#0e1628] via-[#121c32] to-[#0e1628] border-[#c99a4e]/30 shadow-xl'
+          ? 'bg-white border-[#DDE2EC] shadow-sm' 
+          : 'bg-gradient-to-r from-[#0e1628] via-[#121c32] to-[#0e1628] border-white/10 shadow-xl'
       }`}>
         <div className="flex items-center gap-3 text-center sm:text-left">
           {/* Google G Logo Badge */}
-          <div className="w-10 h-10 rounded-xl bg-white p-2 flex items-center justify-center shadow-md shrink-0">
+          <div className="w-10 h-10 rounded-xl bg-white p-2 flex items-center justify-center shadow-md border border-[#DDE2EC] shrink-0">
             <svg viewBox="0 0 24 24" className="w-full h-full">
               <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.65v3.03h3.88c2.27-2.09 3.66-5.17 3.66-9.12z" />
               <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.03c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.13C3.27 21.36 7.34 24 12 24z" />
@@ -106,16 +106,16 @@ export function FlexibleStoriesSection() {
           </div>
           <div>
             <div className="flex items-center gap-1.5 justify-center sm:justify-start">
-              <div className="flex text-amber-400">
+              <div className="flex text-[#FBBE21]">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
               </div>
-              <span className={`text-sm font-bold ${isLight ? 'text-slate-900' : 'text-white'}`}>
+              <span className={`text-sm font-bold ${isLight ? 'text-[#172033]' : 'text-white'}`}>
                 4.9 / 5.0 Rating
               </span>
             </div>
-            <p className={`text-xs font-medium mt-0.5 ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+            <p className={`text-xs font-medium mt-0.5 ${isLight ? 'text-[#5B6475]' : 'text-slate-300'}`}>
               Based on verified student reviews across Google & LMS cohorts
             </p>
           </div>
@@ -124,12 +124,12 @@ export function FlexibleStoriesSection() {
         {/* Highlight Pills */}
         <div className="flex flex-wrap items-center justify-center gap-2 text-xs">
           <span className={`px-3 py-1 rounded-full border font-semibold ${
-            isLight ? 'bg-white border-slate-200 text-slate-700' : 'bg-white/5 border-white/10 text-slate-300'
+            isLight ? 'bg-[#F8F9FC] border-[#DDE2EC] text-[#172033]' : 'bg-white/5 border-white/10 text-slate-300'
           }`}>
             98% Program Satisfaction
           </span>
-          <span className={`px-3 py-1 rounded-full border font-semibold ${
-            isLight ? 'bg-[#fdf6e9] border-[#e9d5a1] text-[#966b24]' : 'bg-[#c99a4e]/15 border-[#c99a4e]/30 text-[#f3d99d]'
+          <span className={`px-3 py-1 rounded-full border font-bold ${
+            isLight ? 'bg-[#243E8A]/10 border-[#243E8A]/20 text-[#243E8A]' : 'bg-[#FBBE21]/15 border-[#FBBE21]/30 text-[#FBBE21]'
           }`}>
             10,000+ Enrolled Learners
           </span>
@@ -141,11 +141,13 @@ export function FlexibleStoriesSection() {
         <button
           id="stories-tab-all"
           onClick={() => setActiveTab('all')}
-          className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all border ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border cursor-pointer ${
             activeTab === 'all'
-              ? 'bg-[#c99a4e] text-slate-950 border-[#c99a4e] shadow-md shadow-[#c99a4e]/20'
+              ? isLight
+                ? 'bg-[#243E8A] text-white border-[#243E8A] shadow-md shadow-[#243E8A]/20'
+                : 'bg-[#FBBE21] text-[#172B68] border-[#FBBE21] shadow-md'
               : isLight
-                ? 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
+                ? 'bg-white text-slate-700 border-[#DDE2EC] hover:bg-[#F8F9FC]'
                 : 'bg-[#0e1628] text-slate-300 border-white/10 hover:border-white/20'
           }`}
         >
@@ -155,26 +157,30 @@ export function FlexibleStoriesSection() {
         <button
           id="stories-tab-google"
           onClick={() => setActiveTab('google')}
-          className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all border flex items-center gap-1.5 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border flex items-center gap-1.5 cursor-pointer ${
             activeTab === 'google'
-              ? 'bg-[#c99a4e] text-slate-950 border-[#c99a4e] shadow-md shadow-[#c99a4e]/20'
+              ? isLight
+                ? 'bg-[#243E8A] text-white border-[#243E8A] shadow-md shadow-[#243E8A]/20'
+                : 'bg-[#FBBE21] text-[#172B68] border-[#FBBE21] shadow-md'
               : isLight
-                ? 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
+                ? 'bg-white text-slate-700 border-[#DDE2EC] hover:bg-[#F8F9FC]'
                 : 'bg-[#0e1628] text-slate-300 border-white/10 hover:border-white/20'
           }`}
         >
-          <Star className="w-3.5 h-3.5 fill-current" />
+          <Star className="w-3.5 h-3.5 fill-current text-[#FBBE21]" />
           <span>Google Reviews ({GOOGLE_REVIEWS.length})</span>
         </button>
 
         <button
           id="stories-tab-videos"
           onClick={() => setActiveTab('videos')}
-          className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all border flex items-center gap-1.5 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border flex items-center gap-1.5 cursor-pointer ${
             activeTab === 'videos'
-              ? 'bg-[#c99a4e] text-slate-950 border-[#c99a4e] shadow-md shadow-[#c99a4e]/20'
+              ? isLight
+                ? 'bg-[#243E8A] text-white border-[#243E8A] shadow-md shadow-[#243E8A]/20'
+                : 'bg-[#FBBE21] text-[#172B68] border-[#FBBE21] shadow-md'
               : isLight
-                ? 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
+                ? 'bg-white text-slate-700 border-[#DDE2EC] hover:bg-[#F8F9FC]'
                 : 'bg-[#0e1628] text-slate-300 border-white/10 hover:border-white/20'
           }`}
         >
@@ -185,11 +191,13 @@ export function FlexibleStoriesSection() {
         <button
           id="stories-tab-alumni"
           onClick={() => setActiveTab('alumni')}
-          className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all border flex items-center gap-1.5 ${
+          className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border flex items-center gap-1.5 cursor-pointer ${
             activeTab === 'alumni'
-              ? 'bg-[#c99a4e] text-slate-950 border-[#c99a4e] shadow-md shadow-[#c99a4e]/20'
+              ? isLight
+                ? 'bg-[#243E8A] text-white border-[#243E8A] shadow-md shadow-[#243E8A]/20'
+                : 'bg-[#FBBE21] text-[#172B68] border-[#FBBE21] shadow-md'
               : isLight
-                ? 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50'
+                ? 'bg-white text-slate-700 border-[#DDE2EC] hover:bg-[#F8F9FC]'
                 : 'bg-[#0e1628] text-slate-300 border-white/10 hover:border-white/20'
           }`}
         >
@@ -207,26 +215,26 @@ export function FlexibleStoriesSection() {
               key={rev.id}
               className={`p-6 rounded-2xl border transition-all flex flex-col justify-between ${
                 isLight 
-                  ? 'bg-white border-slate-200 shadow-md shadow-slate-200/50 hover:border-[#c99a4e]/50' 
-                  : 'bg-gradient-to-b from-[#0e1628] to-[#0a0f1c] border-white/10 hover:border-[#c99a4e]/40 shadow-xl'
+                  ? 'bg-white border-[#DDE2EC] shadow-sm hover:border-[#243E8A]/40' 
+                  : 'bg-gradient-to-b from-[#0e1628] to-[#0a0f1c] border-white/10 hover:border-[#FBBE21]/40 shadow-xl'
               }`}
             >
               <div>
                 <div className="flex items-center justify-between mb-3 pb-3 border-b border-slate-100 dark:border-white/5">
-                  <div className="flex items-center gap-1 text-amber-400">
+                  <div className="flex items-center gap-1 text-[#FBBE21]">
                     {[...Array(rev.rating)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 fill-current" />
                     ))}
                   </div>
                   <span className={`text-[11px] font-semibold px-2 py-0.5 rounded border ${
-                    isLight ? 'bg-slate-100 text-slate-600 border-slate-200' : 'bg-white/5 text-slate-400 border-white/5'
+                    isLight ? 'bg-[#F8F9FC] text-slate-600 border-[#DDE2EC]' : 'bg-white/5 text-slate-400 border-white/5'
                   }`}>
                     {rev.badge}
                   </span>
                 </div>
 
                 <p className={`text-sm sm:text-base leading-relaxed italic mb-4 ${
-                  isLight ? 'text-slate-800' : 'text-slate-200'
+                  isLight ? 'text-[#172033]' : 'text-slate-200'
                 }`}>
                   “{rev.text}”
                 </p>
@@ -235,15 +243,15 @@ export function FlexibleStoriesSection() {
               <div className="pt-3 border-t border-slate-100 dark:border-white/5">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className={`text-sm font-bold ${isLight ? 'text-slate-900' : 'text-white'}`}>
+                    <div className={`text-sm font-bold ${isLight ? 'text-[#172033]' : 'text-white'}`}>
                       {rev.author}
                     </div>
-                    <div className={`text-xs ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                    <div className={`text-xs ${isLight ? 'text-[#5B6475]' : 'text-slate-400'}`}>
                       {rev.date}
                     </div>
                   </div>
-                  <span className={`text-[10px] font-semibold px-2 py-0.5 rounded-full ${
-                    isLight ? 'bg-[#fdf6e9] text-[#966b24]' : 'bg-[#c99a4e]/20 text-[#f3d99d]'
+                  <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                    isLight ? 'bg-[#243E8A]/10 text-[#243E8A]' : 'bg-[#FBBE21]/20 text-[#FBBE21]'
                   }`}>
                     {rev.highlight}
                   </span>
@@ -260,8 +268,8 @@ export function FlexibleStoriesSection() {
               onClick={() => setActiveVideoModal(vid)}
               className={`group cursor-pointer rounded-2xl border overflow-hidden transition-all flex flex-col justify-between ${
                 isLight 
-                  ? 'bg-white border-slate-200 shadow-md shadow-slate-200/50 hover:shadow-xl hover:border-[#c99a4e]/50' 
-                  : 'bg-[#0d1424] border-white/10 hover:border-[#c99a4e]/40 shadow-xl'
+                  ? 'bg-white border-[#DDE2EC] shadow-sm hover:shadow-md hover:border-[#243E8A]/40' 
+                  : 'bg-[#0d1424] border-white/10 hover:border-[#FBBE21]/40 shadow-xl'
               }`}
             >
               {/* Video Thumbnail Simulation */}
@@ -269,7 +277,7 @@ export function FlexibleStoriesSection() {
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors" />
                 
                 {/* Play Button Overlay */}
-                <div className="relative z-10 w-12 h-12 rounded-full bg-[#c99a4e] text-slate-950 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                <div className="relative z-10 w-12 h-12 rounded-full bg-[#FBBE21] text-[#172B68] flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform font-bold">
                   <Play className="w-5 h-5 fill-current ml-0.5" />
                 </div>
 
@@ -279,7 +287,7 @@ export function FlexibleStoriesSection() {
                 </div>
 
                 {/* Video Tag */}
-                <div className="absolute top-2.5 left-2.5 z-10 px-2 py-0.5 rounded bg-black/70 text-[#f3d99d] text-[10px] font-semibold border border-white/10">
+                <div className="absolute top-2.5 left-2.5 z-10 px-2 py-0.5 rounded bg-black/70 text-[#FBBE21] text-[10px] font-semibold border border-white/10">
                   Video Reflection
                 </div>
               </div>
@@ -287,13 +295,13 @@ export function FlexibleStoriesSection() {
               {/* Video Info Body */}
               <div className="p-5 flex-1 flex flex-col justify-between">
                 <div>
-                  <h4 className={`text-sm sm:text-base font-bold font-display group-hover:text-[#c99a4e] transition-colors leading-snug mb-2 ${
-                    isLight ? 'text-slate-900' : 'text-white'
+                  <h4 className={`text-sm sm:text-base font-bold font-display group-hover:text-[#243E8A] dark:group-hover:text-[#FBBE21] transition-colors leading-snug mb-2 ${
+                    isLight ? 'text-[#172033]' : 'text-white'
                   }`}>
                     {vid.title}
                   </h4>
                   <p className={`text-xs italic line-clamp-2 mb-3 ${
-                    isLight ? 'text-slate-600' : 'text-slate-300'
+                    isLight ? 'text-[#5B6475]' : 'text-slate-300'
                   }`}>
                     “{vid.quote}”
                   </p>
@@ -301,15 +309,15 @@ export function FlexibleStoriesSection() {
 
                 <div className="pt-3 border-t border-slate-100 dark:border-white/5 flex items-center justify-between">
                   <div>
-                    <div className={`text-xs font-bold ${isLight ? 'text-slate-900' : 'text-white'}`}>
+                    <div className={`text-xs font-bold ${isLight ? 'text-[#172033]' : 'text-white'}`}>
                       {vid.learnerName}
                     </div>
-                    <div className={`text-[11px] ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                    <div className={`text-[11px] ${isLight ? 'text-[#5B6475]' : 'text-slate-400'}`}>
                       {vid.background}
                     </div>
                   </div>
                   <span className={`text-[10px] font-semibold px-2 py-0.5 rounded ${
-                    isLight ? 'bg-slate-100 text-slate-700' : 'bg-white/5 text-slate-300'
+                    isLight ? 'bg-[#F8F9FC] text-[#172033]' : 'bg-white/5 text-slate-300'
                   }`}>
                     {vid.stageCompleted.split(' ')[2]}
                   </span>
@@ -325,20 +333,20 @@ export function FlexibleStoriesSection() {
               key={item.id}
               className={`p-6 rounded-2xl border transition-all flex flex-col justify-between ${
                 isLight 
-                  ? 'bg-white border-slate-200 shadow-md shadow-slate-200/50 hover:border-[#c99a4e]/50' 
-                  : 'bg-gradient-to-b from-[#0e1628] to-[#0a0f1c] border-white/10 hover:border-[#c99a4e]/40 shadow-xl'
+                  ? 'bg-white border-[#DDE2EC] shadow-sm hover:border-[#243E8A]/40' 
+                  : 'bg-gradient-to-b from-[#0e1628] to-[#0a0f1c] border-white/10 hover:border-[#FBBE21]/40 shadow-xl'
               }`}
             >
               <div>
                 <div className="flex items-center justify-between mb-3 pb-3 border-b border-slate-100 dark:border-white/5">
-                  <span className={`text-xs font-bold ${isLight ? 'text-[#966b24]' : 'text-[#f3d99d]'}`}>
+                  <span className={`text-xs font-bold ${isLight ? 'text-[#243E8A]' : 'text-[#FBBE21]'}`}>
                     {item.stageCompleted}
                   </span>
                   <Quote className={`w-4 h-4 ${isLight ? 'text-slate-300' : 'text-slate-600'}`} />
                 </div>
 
                 <p className={`text-sm sm:text-base leading-relaxed italic mb-4 ${
-                  isLight ? 'text-slate-800' : 'text-slate-200'
+                  isLight ? 'text-[#172033]' : 'text-slate-200'
                 }`}>
                   “{item.quote}”
                 </p>
@@ -346,29 +354,29 @@ export function FlexibleStoriesSection() {
 
               <div className="space-y-3 pt-3 border-t border-slate-100 dark:border-white/5">
                 <div className={`p-2.5 rounded-lg border ${
-                  isLight ? 'bg-slate-50 border-slate-200' : 'bg-white/[0.03] border-white/5'
+                  isLight ? 'bg-[#F8F9FC] border-[#DDE2EC]' : 'bg-white/[0.03] border-white/5'
                 }`}>
                   <div className={`text-[10px] font-bold uppercase tracking-wider mb-0.5 ${
-                    isLight ? 'text-[#966b24]' : 'text-[#c99a4e]'
+                    isLight ? 'text-[#243E8A]' : 'text-[#FBBE21]'
                   }`}>
                     Key Perspective Shift:
                   </div>
-                  <div className={`text-xs ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
+                  <div className={`text-xs ${isLight ? 'text-[#5B6475]' : 'text-slate-300'}`}>
                     {item.keyShift}
                   </div>
                 </div>
 
                 <div className="flex items-center justify-between pt-1">
                   <div>
-                    <div className={`text-xs font-bold ${isLight ? 'text-slate-900' : 'text-white'}`}>
+                    <div className={`text-xs font-bold ${isLight ? 'text-[#172033]' : 'text-white'}`}>
                       {item.namePlaceholder}
                     </div>
-                    <div className={`text-[11px] ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+                    <div className={`text-[11px] ${isLight ? 'text-[#5B6475]' : 'text-slate-400'}`}>
                       {item.backgroundPlaceholder}
                     </div>
                   </div>
                   <span className={`text-[10px] px-2 py-0.5 rounded border ${
-                    isLight ? 'bg-slate-100 text-slate-600 border-slate-200' : 'bg-white/5 text-slate-400 border-white/5'
+                    isLight ? 'bg-[#F8F9FC] text-slate-600 border-[#DDE2EC]' : 'bg-white/5 text-slate-400 border-white/5'
                   }`}>
                     Verified Learner
                   </span>
@@ -382,28 +390,32 @@ export function FlexibleStoriesSection() {
       {activeVideoModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-fade-in">
           <div className={`relative w-full max-w-2xl rounded-2xl border p-6 shadow-2xl ${
-            isLight ? 'bg-white border-slate-200' : 'bg-[#0d1424] border-white/10'
+            isLight ? 'bg-white border-[#DDE2EC]' : 'bg-[#0d1424] border-white/10'
           }`}>
             <button
               onClick={() => setActiveVideoModal(null)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-black/40 hover:bg-black/60 text-white transition-colors"
+              className="absolute top-4 right-4 p-2 rounded-full bg-black/40 hover:bg-black/60 text-white transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
 
             {/* Video Player Header */}
             <div className="mb-4">
-              <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[#c99a4e]/20 text-[#f3d99d] border border-[#c99a4e]/40 inline-block mb-1.5">
+              <span className={`text-xs font-bold px-2.5 py-0.5 rounded-full inline-block mb-1.5 border ${
+                isLight 
+                  ? 'bg-[#243E8A]/10 text-[#243E8A] border-[#243E8A]/20' 
+                  : 'bg-[#FBBE21]/20 text-[#FBBE21] border-[#FBBE21]/40'
+              }`}>
                 Learner Reflection • {activeVideoModal.stageCompleted}
               </span>
-              <h3 className={`text-lg sm:text-xl font-bold font-display ${isLight ? 'text-slate-950' : 'text-white'}`}>
+              <h3 className={`text-lg sm:text-xl font-bold font-display ${isLight ? 'text-[#172033]' : 'text-white'}`}>
                 {activeVideoModal.title}
               </h3>
             </div>
 
             {/* Simulated Player Canvas */}
             <div className="relative aspect-video rounded-xl bg-black flex flex-col items-center justify-center border border-white/10 overflow-hidden mb-4">
-              <div className="w-16 h-16 rounded-full bg-[#c99a4e] text-slate-950 flex items-center justify-center shadow-xl animate-pulse">
+              <div className="w-16 h-16 rounded-full bg-[#FBBE21] text-[#172B68] flex items-center justify-center shadow-xl animate-pulse cursor-pointer">
                 <Play className="w-8 h-8 fill-current ml-1" />
               </div>
               <p className="text-white text-xs font-medium mt-3">
@@ -412,7 +424,7 @@ export function FlexibleStoriesSection() {
               <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between text-xs text-slate-400 font-mono">
                 <span>00:00</span>
                 <div className="flex-1 mx-3 h-1 rounded bg-white/20 overflow-hidden">
-                  <div className="w-1/3 h-full bg-[#c99a4e]" />
+                  <div className="w-1/3 h-full bg-[#FBBE21]" />
                 </div>
                 <span>{activeVideoModal.duration}</span>
               </div>
@@ -420,17 +432,21 @@ export function FlexibleStoriesSection() {
 
             {/* Reflection Key Points */}
             <div className={`p-4 rounded-xl border space-y-1.5 ${
-              isLight ? 'bg-slate-50 border-slate-200' : 'bg-white/[0.02] border-white/5'
+              isLight ? 'bg-[#F8F9FC] border-[#DDE2EC]' : 'bg-white/[0.02] border-white/5'
             }`}>
-              <div className={`text-xs font-bold ${isLight ? 'text-slate-900' : 'text-white'}`}>
+              <div className={`text-xs font-bold ${isLight ? 'text-[#172033]' : 'text-white'}`}>
                 Core Learning Reflection:
               </div>
-              <p className={`text-xs sm:text-sm italic ${isLight ? 'text-slate-700' : 'text-slate-300'}`}>
+              <p className={`text-xs sm:text-sm italic ${isLight ? 'text-[#5B6475]' : 'text-slate-300'}`}>
                 “{activeVideoModal.quote}”
               </p>
               <div className="flex flex-wrap gap-1.5 pt-2">
                 {activeVideoModal.topics.map((t, i) => (
-                  <span key={i} className="text-[10px] px-2 py-0.5 rounded bg-[#c99a4e]/10 text-[#c99a4e] font-semibold border border-[#c99a4e]/20">
+                  <span key={i} className={`text-[10px] px-2 py-0.5 rounded font-bold border ${
+                    isLight 
+                      ? 'bg-[#243E8A]/10 text-[#243E8A] border-[#243E8A]/20' 
+                      : 'bg-[#FBBE21]/10 text-[#FBBE21] border-[#FBBE21]/20'
+                  }`}>
                     {t}
                   </span>
                 ))}

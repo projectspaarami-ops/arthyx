@@ -30,28 +30,28 @@ export function ContactPage({ onOpenReservation }: ContactPageProps) {
 
         {/* 1. Header */}
         <div className="text-center max-w-3xl mx-auto space-y-5">
-          <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold shadow-sm border ${
+          <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold shadow-sm border ${
             isLight 
-              ? 'bg-[#fdf6e9] border-[#e9d5a1] text-[#966b24]' 
-              : 'bg-[#c99a4e]/10 border-[#c99a4e]/30 text-[#e5b869]'
+              ? 'bg-[#243E8A]/10 border-[#243E8A]/20 text-[#243E8A]' 
+              : 'bg-[#FBBE21]/10 border-[#FBBE21]/30 text-[#FBBE21]'
           }`}>
-            <span className="w-2 h-2 rounded-full bg-[#c99a4e]" />
+            <span className="w-2 h-2 rounded-full bg-[#FBBE21]" />
             <span>{CONTACT_PAGE_CONTENT.title}</span>
           </div>
 
           <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold font-display tracking-tight ${
-            isLight ? 'text-slate-950' : 'text-white'
+            isLight ? 'text-[#172033]' : 'text-white'
           }`}>
             {CONTACT_PAGE_CONTENT.headline}
           </h1>
 
           <p className={`text-base sm:text-lg leading-relaxed ${
-            isLight ? 'text-slate-600' : 'text-slate-300'
+            isLight ? 'text-[#5B6475]' : 'text-slate-300'
           }`}>
             {CONTACT_PAGE_CONTENT.subheadline}
           </p>
 
-          <p className={`text-sm ${isLight ? 'text-slate-500' : 'text-slate-400'}`}>
+          <p className={`text-sm ${isLight ? 'text-[#5B6475]' : 'text-slate-400'}`}>
             {CONTACT_PAGE_CONTENT.intro}
           </p>
         </div>
@@ -62,71 +62,71 @@ export function ContactPage({ onOpenReservation }: ContactPageProps) {
           {/* Left Column: Contact Info Cards */}
           <div className="lg:col-span-5 space-y-6">
             <div className={`p-8 rounded-3xl border space-y-6 ${
-              isLight ? 'bg-white border-slate-200 shadow-lg' : 'bg-[#0f172a] border-white/10 shadow-xl'
+              isLight ? 'bg-white border-[#DDE2EC] shadow-sm' : 'bg-[#0f172a] border-white/10 shadow-xl'
             }`}>
               <div className="space-y-2">
-                <span className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${
-                  isLight ? 'bg-[#fdf6e9] text-[#966b24] border-[#e9d5a1]' : 'bg-white/5 text-[#c99a4e] border-white/10'
+                <span className={`text-xs font-bold px-2.5 py-1 rounded-full border ${
+                  isLight ? 'bg-[#243E8A]/10 text-[#243E8A] border-[#243E8A]/20' : 'bg-white/5 text-[#FBBE21] border-white/10'
                 }`}>
                   Direct Assistance
                 </span>
-                <h2 className={`text-2xl font-bold font-display ${isLight ? 'text-slate-950' : 'text-white'}`}>
+                <h2 className={`text-2xl font-bold font-display ${isLight ? 'text-[#172033]' : 'text-white'}`}>
                   {CONTACT_PAGE_CONTENT.helpHeading}
                 </h2>
-                <p className={`text-sm leading-relaxed ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+                <p className={`text-sm leading-relaxed ${isLight ? 'text-[#5B6475]' : 'text-slate-300'}`}>
                   {CONTACT_PAGE_CONTENT.helpText}
                 </p>
               </div>
 
-              <div className="space-y-4 pt-2 border-t border-slate-100 dark:border-white/5">
+              <div className="space-y-4 pt-2 border-t border-[#DDE2EC]/60 dark:border-white/5">
                 <a
                   href={`mailto:${CONTACT_PAGE_CONTENT.info.email}`}
                   className={`flex items-start gap-3.5 p-3.5 rounded-xl border transition-all ${
                     isLight 
-                      ? 'bg-slate-50 hover:bg-slate-100 border-slate-200 text-slate-800' 
+                      ? 'bg-[#F8F9FC] hover:bg-slate-100 border-[#DDE2EC] text-[#172033]' 
                       : 'bg-white/[0.02] hover:bg-white/[0.05] border-white/5 text-slate-200'
                   }`}
                 >
-                  <Mail className="w-5 h-5 text-[#c99a4e] shrink-0 mt-0.5" />
+                  <Mail className="w-5 h-5 text-[#243E8A] dark:text-[#FBBE21] shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-xs text-slate-400 font-medium">Email Address</div>
-                    <div className="text-sm font-semibold">{CONTACT_PAGE_CONTENT.info.email}</div>
+                    <div className="text-xs text-[#5B6475] font-medium">Email Address</div>
+                    <div className="text-sm font-bold">{CONTACT_PAGE_CONTENT.info.email}</div>
                   </div>
                 </a>
 
                 <div
                   className={`flex items-start gap-3.5 p-3.5 rounded-xl border ${
-                    isLight ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-white/[0.02] border-white/5 text-slate-200'
+                    isLight ? 'bg-[#F8F9FC] border-[#DDE2EC] text-[#172033]' : 'bg-white/[0.02] border-white/5 text-slate-200'
                   }`}
                 >
-                  <Phone className="w-5 h-5 text-[#c99a4e] shrink-0 mt-0.5" />
+                  <Phone className="w-5 h-5 text-[#243E8A] dark:text-[#FBBE21] shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-xs text-slate-400 font-medium">Phone Support</div>
-                    <div className="text-sm font-semibold">{CONTACT_PAGE_CONTENT.info.phone}</div>
+                    <div className="text-xs text-[#5B6475] font-medium">Phone Support</div>
+                    <div className="text-sm font-bold">{CONTACT_PAGE_CONTENT.info.phone}</div>
                   </div>
                 </div>
 
                 <div
                   className={`flex items-start gap-3.5 p-3.5 rounded-xl border ${
-                    isLight ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-white/[0.02] border-white/5 text-slate-200'
+                    isLight ? 'bg-[#F8F9FC] border-[#DDE2EC] text-[#172033]' : 'bg-white/[0.02] border-white/5 text-slate-200'
                   }`}
                 >
-                  <MapPin className="w-5 h-5 text-[#c99a4e] shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-[#243E8A] dark:text-[#FBBE21] shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-xs text-slate-400 font-medium">Location</div>
-                    <div className="text-sm font-semibold">{CONTACT_PAGE_CONTENT.info.address}</div>
+                    <div className="text-xs text-[#5B6475] font-medium">Location</div>
+                    <div className="text-sm font-bold">{CONTACT_PAGE_CONTENT.info.address}</div>
                   </div>
                 </div>
 
                 <div
                   className={`flex items-start gap-3.5 p-3.5 rounded-xl border ${
-                    isLight ? 'bg-slate-50 border-slate-200 text-slate-800' : 'bg-white/[0.02] border-white/5 text-slate-200'
+                    isLight ? 'bg-[#F8F9FC] border-[#DDE2EC] text-[#172033]' : 'bg-white/[0.02] border-white/5 text-slate-200'
                   }`}
                 >
-                  <Clock className="w-5 h-5 text-[#c99a4e] shrink-0 mt-0.5" />
+                  <Clock className="w-5 h-5 text-[#243E8A] dark:text-[#FBBE21] shrink-0 mt-0.5" />
                   <div>
-                    <div className="text-xs text-slate-400 font-medium">Working Hours</div>
-                    <div className="text-sm font-semibold">{CONTACT_PAGE_CONTENT.info.workingHours}</div>
+                    <div className="text-xs text-[#5B6475] font-medium">Working Hours</div>
+                    <div className="text-sm font-bold">{CONTACT_PAGE_CONTENT.info.workingHours}</div>
                   </div>
                 </div>
               </div>
@@ -135,27 +135,27 @@ export function ContactPage({ onOpenReservation }: ContactPageProps) {
 
           {/* Right Column: Send Us an Enquiry Form */}
           <div className="lg:col-span-7">
-            <div className={`p-8 sm:p-10 rounded-3xl border shadow-xl ${
-              isLight ? 'bg-white border-slate-200 shadow-slate-200/50' : 'bg-[#0f172a] border-white/10 shadow-2xl'
+            <div className={`p-8 sm:p-10 rounded-3xl border shadow-sm ${
+              isLight ? 'bg-white border-[#DDE2EC]' : 'bg-[#0f172a] border-white/10 shadow-2xl'
             }`}>
               <div className="space-y-2 mb-6">
-                <h2 className={`text-2xl font-bold font-display ${isLight ? 'text-slate-950' : 'text-white'}`}>
+                <h2 className={`text-2xl font-bold font-display ${isLight ? 'text-[#172033]' : 'text-white'}`}>
                   Send Us an Enquiry
                 </h2>
-                <p className={`text-sm ${isLight ? 'text-slate-600' : 'text-slate-300'}`}>
+                <p className={`text-sm ${isLight ? 'text-[#5B6475]' : 'text-slate-300'}`}>
                   Fill in your details below and an Arthyx education counselor will reach out shortly.
                 </p>
               </div>
 
               {isSubmitted ? (
                 <div className={`p-8 rounded-2xl border text-center space-y-4 ${
-                  isLight ? 'bg-[#fdfbf6] border-[#c99a4e]/40 text-slate-900' : 'bg-[#c99a4e]/10 border-[#c99a4e]/30 text-white'
+                  isLight ? 'bg-[#F8F9FC] border-[#243E8A]/30 text-[#172033]' : 'bg-[#FBBE21]/10 border-[#FBBE21]/30 text-white'
                 }`}>
-                  <div className="w-12 h-12 rounded-full bg-[#c99a4e] text-slate-950 flex items-center justify-center mx-auto">
+                  <div className="w-12 h-12 rounded-full bg-[#FBBE21] text-[#172B68] flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
                   <h3 className="text-xl font-bold font-display">Enquiry Submitted Successfully</h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-300 max-w-md mx-auto">
+                  <p className="text-sm text-[#5B6475] dark:text-slate-300 max-w-md mx-auto">
                     Thank you, {formData.fullName}. Our team has received your enquiry regarding "{formData.subject}" and will respond to {formData.email} within 24 business hours.
                   </p>
                   <button
@@ -163,7 +163,7 @@ export function ContactPage({ onOpenReservation }: ContactPageProps) {
                       setIsSubmitted(false);
                       setFormData({ fullName: '', email: '', phone: '', subject: 'General Course Enquiry', message: '' });
                     }}
-                    className="px-5 py-2.5 rounded-xl text-xs font-semibold border border-[#c99a4e] text-[#c99a4e]"
+                    className="px-5 py-2.5 rounded-xl text-xs font-bold border border-[#243E8A] text-[#243E8A] dark:border-[#FBBE21] dark:text-[#FBBE21] cursor-pointer"
                   >
                     Send Another Enquiry
                   </button>
@@ -172,7 +172,7 @@ export function ContactPage({ onOpenReservation }: ContactPageProps) {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                      <label className="text-xs font-semibold text-[#172033] dark:text-slate-300">
                         Full Name *
                       </label>
                       <input
@@ -181,14 +181,14 @@ export function ContactPage({ onOpenReservation }: ContactPageProps) {
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                         placeholder="Enter your name"
-                        className={`w-full px-4 py-3 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-[#c99a4e] ${
-                          isLight ? 'bg-slate-50 border-slate-200 text-slate-900' : 'bg-white/5 border-white/10 text-white'
+                        className={`w-full px-4 py-3 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-[#243E8A] ${
+                          isLight ? 'bg-[#F8F9FC] border-[#DDE2EC] text-[#172033]' : 'bg-white/5 border-white/10 text-white'
                         }`}
                       />
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                      <label className="text-xs font-semibold text-[#172033] dark:text-slate-300">
                         Email Address *
                       </label>
                       <input
@@ -197,8 +197,8 @@ export function ContactPage({ onOpenReservation }: ContactPageProps) {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="Enter your email address"
-                        className={`w-full px-4 py-3 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-[#c99a4e] ${
-                          isLight ? 'bg-slate-50 border-slate-200 text-slate-900' : 'bg-white/5 border-white/10 text-white'
+                        className={`w-full px-4 py-3 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-[#243E8A] ${
+                          isLight ? 'bg-[#F8F9FC] border-[#DDE2EC] text-[#172033]' : 'bg-white/5 border-white/10 text-white'
                         }`}
                       />
                     </div>
@@ -206,7 +206,7 @@ export function ContactPage({ onOpenReservation }: ContactPageProps) {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-1.5">
-                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                      <label className="text-xs font-semibold text-[#172033] dark:text-slate-300">
                         Phone Number
                       </label>
                       <input
@@ -214,21 +214,21 @@ export function ContactPage({ onOpenReservation }: ContactPageProps) {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="Enter your phone number"
-                        className={`w-full px-4 py-3 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-[#c99a4e] ${
-                          isLight ? 'bg-slate-50 border-slate-200 text-slate-900' : 'bg-white/5 border-white/10 text-white'
+                        className={`w-full px-4 py-3 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-[#243E8A] ${
+                          isLight ? 'bg-[#F8F9FC] border-[#DDE2EC] text-[#172033]' : 'bg-white/5 border-white/10 text-white'
                         }`}
                       />
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                      <label className="text-xs font-semibold text-[#172033] dark:text-slate-300">
                         Subject
                       </label>
                       <select
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                        className={`w-full px-4 py-3 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-[#c99a4e] ${
-                          isLight ? 'bg-slate-50 border-slate-200 text-slate-900' : 'bg-[#0f172a] border-white/10 text-white'
+                        className={`w-full px-4 py-3 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-[#243E8A] ${
+                          isLight ? 'bg-[#F8F9FC] border-[#DDE2EC] text-[#172033]' : 'bg-[#0f172a] border-white/10 text-white'
                         }`}
                       >
                         <option value="General Course Enquiry">General Course Enquiry</option>
@@ -241,7 +241,7 @@ export function ContactPage({ onOpenReservation }: ContactPageProps) {
                   </div>
 
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                    <label className="text-xs font-semibold text-[#172033] dark:text-slate-300">
                       Message *
                     </label>
                     <textarea
@@ -250,15 +250,15 @@ export function ContactPage({ onOpenReservation }: ContactPageProps) {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Write your message or question here..."
-                      className={`w-full px-4 py-3 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-[#c99a4e] ${
-                        isLight ? 'bg-slate-50 border-slate-200 text-slate-900' : 'bg-white/5 border-white/10 text-white'
+                      className={`w-full px-4 py-3 rounded-xl text-sm border focus:outline-none focus:ring-2 focus:ring-[#243E8A] ${
+                        isLight ? 'bg-[#F8F9FC] border-[#DDE2EC] text-[#172033]' : 'bg-white/5 border-white/10 text-white'
                       }`}
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full py-3.5 rounded-xl font-bold text-sm text-slate-950 bg-gradient-to-r from-[#e5b869] via-[#c99a4e] to-[#ba8a3e] hover:from-[#f3c87e] hover:to-[#c99a4e] shadow-lg shadow-[#c99a4e]/20 transition-all flex items-center justify-center gap-2"
+                    className="w-full py-3.5 rounded-xl font-bold text-sm text-[#172B68] bg-[#FBBE21] hover:bg-[#f3b516] shadow-lg shadow-[#FBBE21]/20 transition-all flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>Submit Enquiry</span>
                     <Send className="w-4 h-4" />
@@ -272,24 +272,24 @@ export function ContactPage({ onOpenReservation }: ContactPageProps) {
         {/* 3. Take the Next Step in Your Learning Journey (PDF page 44) */}
         <div className={`p-8 sm:p-12 rounded-3xl border text-center ${
           isLight 
-            ? 'bg-gradient-to-b from-[#fdfbf6] to-white border-[#e9d5a1]/60 shadow-lg' 
+            ? 'bg-gradient-to-b from-[#F8F9FC] to-white border-[#DDE2EC] shadow-sm' 
             : 'bg-gradient-to-b from-[#131b2c] to-[#090d18] border-white/10 shadow-2xl'
         }`}>
           <div className="max-w-2xl mx-auto space-y-4">
             <h3 className={`text-2xl sm:text-3xl font-bold font-display ${
-              isLight ? 'text-slate-950' : 'text-white'
+              isLight ? 'text-[#172033]' : 'text-white'
             }`}>
               {CONTACT_PAGE_CONTENT.ctaBox.headline}
             </h3>
             <p className={`text-sm sm:text-base leading-relaxed ${
-              isLight ? 'text-slate-600' : 'text-slate-300'
+              isLight ? 'text-[#5B6475]' : 'text-slate-300'
             }`}>
               {CONTACT_PAGE_CONTENT.ctaBox.body}
             </p>
             <div className="pt-2">
               <button
                 onClick={onOpenReservation}
-                className="px-7 py-3.5 rounded-xl text-sm sm:text-base font-bold text-slate-950 bg-[#c99a4e] hover:bg-[#ba8a3e] shadow-xl shadow-[#c99a4e]/20 transition-all flex items-center justify-center gap-2 mx-auto"
+                className="px-7 py-3.5 rounded-xl text-sm sm:text-base font-bold text-[#172B68] bg-[#FBBE21] hover:bg-[#f3b516] shadow-xl shadow-[#FBBE21]/20 transition-all flex items-center justify-center gap-2 mx-auto cursor-pointer"
               >
                 <span>{CONTACT_PAGE_CONTENT.ctaBox.ctaText}</span>
                 <ArrowRight className="w-4 h-4" />

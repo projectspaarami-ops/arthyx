@@ -1,7 +1,26 @@
 @import "tailwindcss";
 
+@theme {
+  --color-brand-primary: #243E8A;
+  --color-brand-secondary: #172B68;
+  --color-brand-accent: #FBBE21;
+  --color-brand-bg: #F8F9FC;
+  --color-brand-surface: #FFFFFF;
+  --color-brand-text: #172033;
+  --color-brand-muted: #5B6475;
+  --color-brand-border: #DDE2EC;
+}
+
 :root {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --primary: #243E8A;
+  --secondary: #172B68;
+  --accent: #FBBE21;
+  --background: #F8F9FC;
+  --surface: #FFFFFF;
+  --text: #172033;
+  --muted-text: #5B6475;
+  --border: #DDE2EC;
 }
 
 .font-display, h1, h2, h3, h4, h5, h6 {
@@ -12,22 +31,22 @@
 .bg-grid-pattern {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(36, 62, 138, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(36, 62, 138, 0.05) 1px, transparent 1px);
 }
 
 .dark .bg-grid-pattern {
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
 
 .bg-radial-fade {
-  background: radial-gradient(circle at 50% 0%, rgba(201, 154, 78, 0.10) 0%, rgba(248, 249, 250, 0) 70%);
+  background: radial-gradient(circle at 50% 0%, rgba(36, 62, 138, 0.08) 0%, rgba(248, 249, 252, 0) 70%);
 }
 
 .dark .bg-radial-fade {
-  background: radial-gradient(circle at 50% 0%, rgba(201, 154, 78, 0.12) 0%, rgba(8, 12, 21, 0) 70%);
+  background: radial-gradient(circle at 50% 0%, rgba(36, 62, 138, 0.18) 0%, rgba(14, 22, 40, 0) 70%);
 }
 
 /* Custom refined scrollbar */
@@ -36,19 +55,19 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #F8F9FC;
 }
 .dark ::-webkit-scrollbar-track {
-  background: #080c15;
+  background: #0e1628;
 }
 ::-webkit-scrollbar-thumb {
-  background: rgba(100, 116, 139, 0.25);
+  background: rgba(36, 62, 138, 0.25);
   border-radius: 3px;
 }
 .dark ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.2);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(201, 154, 78, 0.5);
+  background: #243E8A;
 }
 

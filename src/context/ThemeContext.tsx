@@ -26,11 +26,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     if (theme === 'light') {
       root.classList.remove('dark');
       root.classList.add('light');
-      document.body.className = 'bg-[#f8f9fa] text-[#0f172a] font-sans antialiased selection:bg-[#c99a4e]/20 selection:text-[#9a6922] min-h-screen overflow-x-hidden';
+      document.body.className = 'bg-[#F8F9FC] text-[#172033] font-sans antialiased selection:bg-[#FBBE21]/35 selection:text-[#172B68] min-h-screen overflow-x-hidden';
     } else {
       root.classList.remove('light');
       root.classList.add('dark');
-      document.body.className = 'bg-[#080c15] text-[#e2e8f0] font-sans antialiased selection:bg-[#c99a4e]/20 selection:text-[#f3d99d] min-h-screen overflow-x-hidden';
+      document.body.className = 'bg-[#09101d] text-[#F1F5F9] font-sans antialiased selection:bg-[#FBBE21]/30 selection:text-[#FBBE21] min-h-screen overflow-x-hidden';
     }
   }, [theme]);
 
